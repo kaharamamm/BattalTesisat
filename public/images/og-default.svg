@@ -1,14 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Battal Tesisat">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Ada Tesisat&Hırdavat">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0B1F33"/>
-      <stop offset="55%" stop-color="#172634"/>
-      <stop offset="100%" stop-color="#1e3a4f"/>
+      <stop offset="100%" stop-color="#163A56"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <rect x="48" y="48" width="1104" height="534" rx="16" fill="none" stroke="#F97316" stroke-opacity="0.35" stroke-width="2"/>
-  <circle cx="600" cy="275" r="36" fill="#F97316" fill-opacity="0.2"/>
-  <text x="50%" y="50%" text-anchor="middle" fill="#F5F7F9" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600">Battal Tesisat</text>
-  <text x="50%" y="58%" text-anchor="middle" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">Yer tutucu görsel — değiştirilebilir</text>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="50%" y="46%" text-anchor="middle" fill="#F5F7F9" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="600">Ada Tesisat&amp;Hırdavat</text>
+  <text x="50%" y="56%" text-anchor="middle" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="22">Eskişehir • İsmail Usta</text>
 </svg>

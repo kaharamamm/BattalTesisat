@@ -40,7 +40,8 @@ const intensityScale: Record<
 
 /**
  * Top-heavy washes with left-edge coverage.
- * Use `strong` for hero / page tops only.
+ * Prefer wrapping page tops in `PageShell` (fixed-height band) so washes
+ * match across routes. Mid-page sections may still use this full-bleed.
  */
 export function ToneBackdrop({
   tone,
@@ -60,25 +61,28 @@ export function ToneBackdrop({
   const scale = intensityScale[intensity];
 
   return (
-    <div className={cn("pointer-events-none absolute inset-0", className)} aria-hidden>
+    <div
+      className={cn("pointer-events-none absolute inset-0", className)}
+      aria-hidden
+    >
       {rgb ? (
         <>
           <div
-            className="absolute inset-0"
+            className="absolute inset-x-0 top-0 h-full"
             style={{
-              background: `linear-gradient(180deg, ${rgba(rgb, scale.veil[0])} 0%, ${rgba(rgb, scale.veil[1])} 26%, ${rgba(rgb, scale.veil[2])} 50%, transparent 74%)`,
+              background: `linear-gradient(180deg, ${rgba(rgb, scale.veil[0])} 0%, ${rgba(rgb, scale.veil[1])} 28%, ${rgba(rgb, scale.veil[2])} 55%, ${rgba(rgb, 0.01)} 78%, transparent 100%)`,
             }}
           />
           <div
-            className="absolute inset-0"
+            className="absolute inset-x-0 top-0 h-full"
             style={{
-              background: `radial-gradient(ellipse 100% 80% at 100% -8%, ${rgba(rgb, scale.right)}, transparent 68%)`,
+              background: `radial-gradient(ellipse 100% 90% at 100% 0%, ${rgba(rgb, scale.right)}, transparent 70%)`,
             }}
           />
           <div
-            className="absolute inset-0"
+            className="absolute inset-x-0 top-0 h-full"
             style={{
-              background: `radial-gradient(ellipse 95% 78% at -5% 0%, ${rgba(rgb, scale.left)}, transparent 66%)`,
+              background: `radial-gradient(ellipse 95% 88% at 0% 0%, ${rgba(rgb, scale.left)}, transparent 68%)`,
             }}
           />
         </>

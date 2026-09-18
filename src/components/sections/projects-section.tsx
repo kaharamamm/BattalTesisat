@@ -5,24 +5,15 @@ import { Section } from "@/components/shared/section";
 import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
 import { Reveal } from "@/components/shared/reveal";
 
-export function ProjectsSection({
+function ProjectsGrid({
+  items,
   limit,
-  spacing = "section",
 }: {
+  items: typeof projects;
   limit?: number;
-  spacing?: "section" | "page";
 }) {
-  const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
-  const isPageTop = spacing === "page";
-
   return (
-    <Section
-      spacing={spacing}
-      tone={isPageTop ? "teal" : "none"}
-      intensity="strong"
-      title="Yaptığımız İşlerden"
-      description="Proje görselleri ve açıklamaları müşteri tarafından sağlandığında burada yayınlanacaktır."
-    >
+    <>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((project, i) => (
           <Reveal key={project.id} delay={i * 0.04}>
@@ -68,6 +59,41 @@ export function ProjectsSection({
           </Link>
         </div>
       ) : null}
+    </>
+  );
+}
+
+export function ProjectsSection({
+  limit,
+  spacing = "section",
+  showHeader = true,
+  /** Render grid only — use inside PageShell/Container like Hizmetler. */
+  bare = false,
+}: {
+  limit?: number;
+  spacing?: "section" | "page";
+  showHeader?: boolean;
+  bare?: boolean;
+}) {
+  const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
+  const grid = <ProjectsGrid items={items} limit={limit} />;
+
+  if (bare) {
+    return <div className="mt-8 md:mt-10">{grid}</div>;
+  }
+
+  return (
+    <Section
+      spacing={spacing}
+      tone="none"
+      title={showHeader ? "Yaptığımız İşlerden" : undefined}
+      description={
+        showHeader
+          ? "Proje görselleri ve açıklamaları müşteri tarafından sağlandığında burada yayınlanacaktır."
+          : undefined
+      }
+    >
+      {grid}
     </Section>
   );
 }

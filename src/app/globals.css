@@ -146,38 +146,94 @@
   initial-value: 0deg;
 }
 
-/* Full-edge accent frame; spins around the card on hover */
-.contact-card-orbit {
-  transform: translate(-50%, -50%);
+/*
+ * Even 2px gradient ring on any card size (mask keeps paint only on the rim).
+ * Soft brand/navy stops — no full-bleed spinning square.
+ */
+.contact-card-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
   background: conic-gradient(
-    from 0deg,
-    #f97316 0deg,
-    #0b1f33 55deg,
-    #f97316 110deg,
-    #0b1f33 165deg,
-    #f97316 220deg,
-    #0b1f33 275deg,
-    #f97316 330deg,
-    #0b1f33 360deg
+    from var(--contact-ring-angle),
+    #ea580c 0deg,
+    #334155 120deg,
+    #f97316 240deg,
+    #0f172a 360deg
   );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
-.group:hover .contact-card-orbit {
-  animation: contact-orbit-spin 2.2s linear infinite;
+.group:hover .contact-card-ring {
+  animation: contact-ring-spin 3.5s linear infinite;
 }
 
-@keyframes contact-orbit-spin {
+@keyframes contact-ring-spin {
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    --contact-ring-angle: 360deg;
   }
 }
 
-@keyframes marquee-rtl {
-  from {
-    transform: translateX(0);
+@keyframes page-wash-drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
   }
-  to {
-    transform: translateX(-50%);
+  50% {
+    transform: translate(-6%, 8%) scale(1.08);
+  }
+}
+
+@keyframes page-wash-drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(8%, 5%) scale(1.06);
+  }
+}
+
+@keyframes page-wash-drift-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-4%, -6%) scale(1.1);
+  }
+}
+
+.page-wash-blob {
+  will-change: transform;
+}
+
+.page-wash-blob-a {
+  animation: page-wash-drift-a 18s ease-in-out infinite;
+}
+
+.page-wash-blob-b {
+  animation: page-wash-drift-b 22s ease-in-out infinite;
+}
+
+.page-wash-blob-c {
+  animation: page-wash-drift-c 16s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-wash-blob-a,
+  .page-wash-blob-b,
+  .page-wash-blob-c {
+    animation: none !important;
   }
 }
 
@@ -196,7 +252,7 @@
     transform: none !important;
   }
 
-  .group:hover .contact-card-orbit {
+  .group:hover .contact-card-ring {
     animation: none !important;
   }
 }

@@ -1,6 +1,6 @@
-# Battal Tesisat
+# Ada Tesisat&Hırdavat
 
-Ankara odaklı su ve doğalgaz tesisatı firması için statik Next.js web sitesi.
+Eskişehir Tepebaşı odaklı su ve doğalgaz tesisatı / hırdavat firması için statik Next.js web sitesi.
 
 Production dosyaları `out/` klasörüne üretilir ve shared hosting / cPanel `public_html` altına yüklenebilir.
 
@@ -13,7 +13,7 @@ Production dosyaları `out/` klasörüne üretilir ve shared hosting / cPanel `p
 - Motion (hafif reveal animasyonları)
 - Static export (`output: "export"`)
 
-Backend, API route, Server Action, veritabanı veya kimlik doğrulama **yoktur**.
+Backend, API route, Server Action, veritabanı, Firebase veya kimlik doğrulama **yoktur**.
 
 ## Kurulum
 
@@ -39,45 +39,51 @@ Başarılı build sonrası yüklemeye hazır dosyalar:
 out/
 ```
 
-Bu klasörün içeriğini Linux/cPanel hosting üzerinde `public_html` (veya ilgili web kökü) içine yükleyebilirsiniz.
-
 ## Müşteri verileri nerede düzenlenir?
 
 | Bilgi | Dosya |
 | --- | --- |
-| Firma adı, telefon, WhatsApp, e-posta, adres, çalışma saatleri, SEO, domain | `src/config/site.ts` |
+| Firma adı, usta, telefon, WhatsApp, e-posta, adres, çalışma saatleri, SEO, domain | `src/config/site.ts` |
 | Hizmetler | `src/data/services.ts` |
 | Projeler / fotoğraflar | `src/data/projects.ts` + `public/images/project-*.svg` |
-| Google puanı / yorumlar | `src/config/site.ts` (`trust`) + `src/data/reviews.ts` |
+| Google puanı / yorumlar | `src/config/site.ts` (`trust`) + `src/data/reviews.ts` + `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` |
 | SSS | `src/data/faqs.ts` |
 | Avantaj maddeleri | `src/data/benefits.ts` |
 | Görseller | `public/images/` (aynı dosya adlarını koruyarak değiştirin) |
 
 WhatsApp varsayılan mesajı: `src/config/site.ts` → `contact.whatsappDefaultMessage`
 
-Analitik olayları: `src/lib/analytics.ts` (GA bağlanana kadar no-op)
+Google yorumları (canlı): Ana Sayfa her ziyarette Google Places üzerinden puan ve en yüksek puanlı yorumları çeker (`NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`). Anahtar yoksa `src/data/reviews.ts` yedek olarak kullanılır. Google API en fazla 5 yorum döndürür; liste döngüde gösterilir ve fare ile sürüklenerek kaydırılabilir.
 
 ## Customer data checklist
 
-Aşağıdakiler hâlâ yer tutucudur ve canlıya çıkmadan önce gerçek değerlerle değiştirilmelidir:
-
-- [ ] Telefon numarası (`phoneDisplay`, `phoneHref`)
-- [ ] WhatsApp numarası (`whatsapp`)
+- [x] Telefon / WhatsApp
+- [x] Google Maps URL + embed URL (Eskişehir Tepebaşı)
+- [x] Google Business linki
+- [x] Usta / sahip adı (İsmail Usta)
+- [x] Fiziksel adres
+- [x] Marka adı (Ada Tesisat&Hırdavat)
 - [ ] E-posta adresi
-- [ ] Fiziksel adres
 - [ ] Çalışma saatleri
-- [ ] Google Maps URL + embed URL
-- [ ] Google Business / yorumlar linki
-- [ ] Google puanı ve yorum sayısı
-- [ ] Gerçek müşteri yorumları
+- [ ] Google puanı ve yorum sayısı (`trust`)
+- [ ] Gerçek müşteri yorumları (`src/data/reviews.ts`)
 - [ ] Hizmet açıklamalarının müşteri onayı
 - [ ] Proje fotoğrafları ve açıklamaları
-- [ ] Firma hakkında metin / deneyim bilgisi
+- [ ] Deneyim / tamamlanan iş sayıları
 - [ ] Sosyal medya linkleri
-- [ ] Production domain (`seo.siteUrl`) — şu an `https://example.com`
+- [ ] Production domain (`seo.siteUrl`)
 - [ ] OG / favicon nihai görselleri
 - [ ] Gizlilik ve çerez politikası metinleri
-- [ ] Google Analytics ölçüm ID’si (isteğe bağlı)
+- [ ] Google Analytics ölçüm ID’si (`NEXT_PUBLIC_GA_MEASUREMENT_ID`)
+
+## Bağlantılar (canlı)
+
+| Kanal | Değer |
+| --- | --- |
+| Telefon / WhatsApp | +90 552 018 18 97 |
+| Google Maps | https://maps.app.goo.gl/Bi19ZQ3URZdfmYnTA |
+| Adres | Çamlıca, Gündüz Ökçün Blv., 26100 Tepebaşı/Eskişehir |
+| Usta | İsmail Usta |
 
 ## Rotalar
 
@@ -91,9 +97,3 @@ Aşağıdakiler hâlâ yer tutucudur ve canlıya çıkmadan önce gerçek değer
 - `/iletisim`
 - `/gizlilik`
 - `/cerez-politikasi`
-
-## Notlar
-
-- Sarı **Yer tutucu** rozetleri, sahte iş iddialarının canlı veri sanılmasını önlemek içindir.
-- Floating WhatsApp yalnızca masaüstünde görünür; mobilde alt dönüşüm çubuğu kullanılır.
-- `npm run build` sonrası `out/` klasörünü yükleyin; Vercel zorunlu değildir.

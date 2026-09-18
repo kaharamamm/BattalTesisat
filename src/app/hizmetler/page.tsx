@@ -13,8 +13,7 @@ import { FinalCtaSection } from "@/components/sections/final-cta";
 
 export const metadata: Metadata = {
   title: "Hizmetler",
-  description:
-    "Battal Tesisat hizmetleri — su tesisatı, doğalgaz tesisatı ve olası ek hizmetler.",
+  description: `${siteConfig.company.name} hizmetleri — su tesisatı, doğalgaz tesisatı ve olası ek hizmetler.`,
   alternates: { canonical: "/hizmetler" },
 };
 
@@ -24,7 +23,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <PageShell tone="blue">
+      <PageShell>
         <Container className="page-space">
           <h1 className="sr-only">Hizmetlerimiz</h1>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

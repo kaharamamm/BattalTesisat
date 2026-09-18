@@ -1,21 +1,24 @@
 import { cn } from "@/lib/utils";
-import { ToneBackdrop, type SectionTone } from "@/components/shared/tone";
+import { AnimatedWash } from "@/components/shared/animated-wash";
 
 type PageShellProps = {
   children: React.ReactNode;
-  tone?: Exclude<SectionTone, "none">;
+  /** Skip warm/orange tones (Ana Sayfa) */
+  excludeWarm?: boolean;
   className?: string;
 };
 
-/** Top-only wash for inner pages (no bottom blend). */
+/**
+ * Soft top wash for every inner page — random colors + gentle drift.
+ */
 export function PageShell({
   children,
-  tone = "sky",
+  excludeWarm = false,
   className,
 }: PageShellProps) {
   return (
-    <div className={cn("relative overflow-hidden bg-white", className)}>
-      <ToneBackdrop tone={tone} intensity="strong" />
+    <div className={cn("relative bg-white", className)}>
+      <AnimatedWash variant="page" excludeWarm={excludeWarm} />
       <div className="relative">{children}</div>
     </div>
   );

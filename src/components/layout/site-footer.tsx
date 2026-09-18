@@ -5,6 +5,7 @@ import { getPrimaryServices } from "@/data/services";
 import { Container } from "@/components/shared/container";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { PhoneLink } from "@/components/shared/phone-link";
+import { SocialLinks } from "@/components/shared/social-links";
 import { Separator } from "@/components/ui/separator";
 
 export function SiteFooter() {
@@ -82,6 +83,9 @@ export function SiteFooter() {
                   variant="ghost"
                   className="justify-start px-0 text-white/80 hover:bg-transparent hover:text-brand"
                 />
+              </li>
+              <li>
+                <SocialLinks tone="dark" showEmpty />
               </li>
               <li className="flex gap-2">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />

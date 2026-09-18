@@ -38,7 +38,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <>
-      <PageShell tone="blue">
+      <PageShell>
         <Container className="page-space">
           <div className="grid items-start gap-10 lg:grid-cols-2">
             <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">

@@ -15,7 +15,7 @@ export const faqs: Faq[] = [
   },
   {
     id: "faq-2",
-    question: "Hangi tesisat hizmetlerini sunuyorsunuz?",
+    question: "Hangi hizmetleri sunuyorsunuz?",
     answer:
       "Başlangıç olarak su ve doğalgaz tesisatı odaklı yapılandırılmıştır. Nihai hizmet listesi müşteri onayı sonrası güncellenecektir.",
     isPlaceholder: true,

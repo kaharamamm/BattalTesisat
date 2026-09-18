@@ -39,7 +39,8 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative overflow-hidden bg-white",
+        "relative overflow-hidden",
+        tone === "none" ? "bg-transparent" : "bg-white",
         spacing === "page" ? "page-space" : "section-space",
         className,
       )}

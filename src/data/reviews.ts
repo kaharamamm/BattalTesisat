@@ -8,80 +8,75 @@ export type Review = {
 };
 
 /**
- * Do NOT invent customer names or fake review quotes.
- * Replace with real Google Business reviews when available.
+ * Real Google Business reviews from ADA HIRDAVAT TESİSAT
+ * (https://maps.app.goo.gl/Bi19ZQ3URZdfmYnTA).
+ * Owner / self reviews intentionally omitted.
  * Carousel shows up to 10 five-star reviews.
  */
 export const reviews: Review[] = [
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "Safiye Kale",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Evimin şu tesisatını yaptırdım söz verdiği saatte geldiler Neslihan hanım gayet ilgili ve güler yüzlü hizmet verdi teşekkür ederim",
+    date: "2 ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "Gokay koku",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Çok güzel bir tesisatçı ürünleri çok kaliteli herkese tavsiye ederim 👍🏻",
+    date: "2 ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "dogus duzgun",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Ufak bir tesisat sorunumuz için çağırmıştık. Sağolsunlar gelmişken evin tüm tesisat sorunlarını çözüp gittiler. Oldukça memnun kaldık.",
+    date: "bir ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "Tr Tr",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Fiyatlar ucuz kaliteli ve abla çok samimi",
+    date: "2 ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "taner akyazı",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Kesinlikle yaptığı işin arkasında duruyor. Öneririm.",
+    date: "2 ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "İsmail Demirci",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Bol çeşit uygun fiyat tavsiye ederim",
+    date: "2 ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "Hamza Şen",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Çok güzel bir tesisatçı ürünleri çok kaliteli herkese tavsiye ederim 👍🏻",
+    date: "2 ay önce",
     source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
-    author: "Müşteri adı buraya gelecek",
+    author: "Aytaç BİRİK",
     rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
+    text: "Güler yüzlü gönlü hoş bir esnaf. Allah tuttuğunu altın etsin, ne zaman yanına gitsem misafirperverliğiyle öne çıkıyor. İyiki varsın Neslihan ustam.",
+    date: "3 hafta önce",
     source: "Google",
-    isPlaceholder: true,
-  },
-  {
-    author: "Müşteri adı buraya gelecek",
-    rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
-    source: "Google",
-    isPlaceholder: true,
-  },
-  {
-    author: "Müşteri adı buraya gelecek",
-    rating: 5,
-    text: "Gerçek Google yorumu buraya gelecek.",
-    source: "Google",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
 ];
 

@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import { siteConfig } from "@/config/site";
 import { benefits } from "@/data/benefits";
 import { Section } from "@/components/shared/section";
 import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
@@ -6,7 +7,7 @@ import { Reveal } from "@/components/shared/reveal";
 
 export function WhyUsSection() {
   return (
-    <Section title="Neden Battal Tesisat?">
+    <Section title={`Neden ${siteConfig.company.name}?`}>
       <Reveal>
         <p className="mb-8 max-w-3xl text-base text-muted-foreground sm:text-lg">
           Aşağıdaki maddeler müşteri tarafından onaylanacak avantaj başlıklarıdır.
