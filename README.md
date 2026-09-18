@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Battal Tesisat
 
-## Getting Started
+Ankara odaklı su ve doğalgaz tesisatı firması için statik Next.js web sitesi.
 
-First, run the development server:
+Production dosyaları `out/` klasörüne üretilir ve shared hosting / cPanel `public_html` altına yüklenebilir.
+
+## Teknoloji
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- shadcn/ui (Button, Sheet, Accordion, Card, Badge, Separator)
+- Lucide React
+- Motion (hafif reveal animasyonları)
+- Static export (`output: "export"`)
+
+Backend, API route, Server Action, veritabanı veya kimlik doğrulama **yoktur**.
+
+## Kurulum
+
+```bash
+npm install
+```
+
+## Yerel geliştirme
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Production build (statik export)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Başarılı build sonrası yüklemeye hazır dosyalar:
 
-## Learn More
+```text
+out/
+```
 
-To learn more about Next.js, take a look at the following resources:
+Bu klasörün içeriğini Linux/cPanel hosting üzerinde `public_html` (veya ilgili web kökü) içine yükleyebilirsiniz.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Müşteri verileri nerede düzenlenir?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Bilgi | Dosya |
+| --- | --- |
+| Firma adı, telefon, WhatsApp, e-posta, adres, çalışma saatleri, SEO, domain | `src/config/site.ts` |
+| Hizmetler | `src/data/services.ts` |
+| Projeler / fotoğraflar | `src/data/projects.ts` + `public/images/project-*.svg` |
+| Google puanı / yorumlar | `src/config/site.ts` (`trust`) + `src/data/reviews.ts` |
+| SSS | `src/data/faqs.ts` |
+| Avantaj maddeleri | `src/data/benefits.ts` |
+| Görseller | `public/images/` (aynı dosya adlarını koruyarak değiştirin) |
 
-## Deploy on Vercel
+WhatsApp varsayılan mesajı: `src/config/site.ts` → `contact.whatsappDefaultMessage`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Analitik olayları: `src/lib/analytics.ts` (GA bağlanana kadar no-op)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customer data checklist
+
+Aşağıdakiler hâlâ yer tutucudur ve canlıya çıkmadan önce gerçek değerlerle değiştirilmelidir:
+
+- [ ] Telefon numarası (`phoneDisplay`, `phoneHref`)
+- [ ] WhatsApp numarası (`whatsapp`)
+- [ ] E-posta adresi
+- [ ] Fiziksel adres
+- [ ] Çalışma saatleri
+- [ ] Google Maps URL + embed URL
+- [ ] Google Business / yorumlar linki
+- [ ] Google puanı ve yorum sayısı
+- [ ] Gerçek müşteri yorumları
+- [ ] Hizmet açıklamalarının müşteri onayı
+- [ ] Proje fotoğrafları ve açıklamaları
+- [ ] Firma hakkında metin / deneyim bilgisi
+- [ ] Sosyal medya linkleri
+- [ ] Production domain (`seo.siteUrl`) — şu an `https://example.com`
+- [ ] OG / favicon nihai görselleri
+- [ ] Gizlilik ve çerez politikası metinleri
+- [ ] Google Analytics ölçüm ID’si (isteğe bağlı)
+
+## Rotalar
+
+- `/`
+- `/hizmetler`
+- `/hizmetler/su-tesisati`
+- `/hizmetler/dogalgaz-tesisati`
+- `/hakkimizda`
+- `/projeler`
+- `/sss`
+- `/iletisim`
+- `/gizlilik`
+- `/cerez-politikasi`
+
+## Notlar
+
+- Sarı **Yer tutucu** rozetleri, sahte iş iddialarının canlı veri sanılmasını önlemek içindir.
+- Floating WhatsApp yalnızca masaüstünde görünür; mobilde alt dönüşüm çubuğu kullanılır.
+- `npm run build` sonrası `out/` klasörünü yükleyin; Vercel zorunlu değildir.

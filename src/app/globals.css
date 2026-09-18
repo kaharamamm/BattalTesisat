@@ -1,26 +1,202 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-inter);
+  --color-navy: var(--navy);
+  --color-navy-dark: var(--navy-dark);
+  --color-surface: var(--surface);
+  --color-border-subtle: var(--border-subtle);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-placeholder: var(--placeholder);
+  --color-placeholder-fg: var(--placeholder-fg);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Brand tokens */
+  --navy: #0b1f33;
+  --navy-dark: #172634;
+  --surface: #f5f7f9;
+  --border-subtle: #e2e8f0;
+  --brand: #f97316;
+  --brand-foreground: #ffffff;
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
+  --placeholder: #fef3c7;
+  --placeholder-fg: #92400e;
+
+  /* shadcn mapped to brand */
+  --background: #ffffff;
+  --foreground: #0b1f33;
+  --card: #ffffff;
+  --card-foreground: #0b1f33;
+  --popover: #ffffff;
+  --popover-foreground: #0b1f33;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f7f9;
+  --secondary-foreground: #0b1f33;
+  --muted: #f5f7f9;
+  --muted-foreground: #5b6b7c;
+  --accent: #fff7ed;
+  --accent-foreground: #0b1f33;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #f97316;
+  --radius: 0.875rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b1f33;
+  --sidebar-primary: #f97316;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f7f9;
+  --sidebar-accent-foreground: #0b1f33;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #f97316;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-foreground antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight text-navy;
+    line-height: 1.2;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Homepage / mid-page sections */
+  .section-space {
+    @apply py-10 md:py-14 lg:py-16;
+  }
+
+  /* Inner pages — matches former PageHero start height */
+  .page-space {
+    @apply pt-10 pb-8 md:pt-12 md:pb-10 lg:pt-14 lg:pb-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .placeholder-mark {
+    @apply inline-flex items-center rounded-md bg-placeholder px-2 py-0.5 text-xs font-medium text-placeholder-fg;
+  }
+
+  .animate-marquee {
+    animation: marquee-rtl 45s linear infinite;
+  }
+}
+
+@property --contact-ring-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Full-edge accent frame; spins around the card on hover */
+.contact-card-orbit {
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    #f97316 0deg,
+    #0b1f33 55deg,
+    #f97316 110deg,
+    #0b1f33 165deg,
+    #f97316 220deg,
+    #0b1f33 275deg,
+    #f97316 330deg,
+    #0b1f33 360deg
+  );
+}
+
+.group:hover .contact-card-orbit {
+  animation: contact-orbit-spin 2.2s linear infinite;
+}
+
+@keyframes contact-orbit-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .group:hover .contact-card-orbit {
+    animation: none !important;
+  }
 }
