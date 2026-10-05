@@ -7,12 +7,11 @@ import { Reveal } from "@/components/shared/reveal";
 
 export function WhyUsSection() {
   return (
-    <Section title={`Neden ${siteConfig.company.name}?`}>
+    <Section
+      title={`Neden ${siteConfig.company.name}?`}
+      description="Deneyim, geniş hizmet kapsamı ve hızlı iletişim ile Eskişehir'de yanınızdayız."
+    >
       <Reveal>
-        <p className="mb-8 max-w-3xl text-base text-muted-foreground sm:text-lg">
-          Aşağıdaki maddeler müşteri tarafından onaylanacak avantaj başlıklarıdır.
-          Gerçek iddialar eklenene kadar yer tutucu olarak gösterilmektedir.
-        </p>
         <ul className="grid gap-4 md:grid-cols-2">
           {benefits.map((benefit) => (
             <li

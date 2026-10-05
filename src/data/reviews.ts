@@ -86,7 +86,7 @@ export function getTopFiveStarReviews(limit = 10): Review[] {
 
 export const reviewsSummary = {
   heading: "Müşterilerimiz Ne Diyor?",
-  ratingPlaceholder: "Google puanı buraya gelecek",
-  countPlaceholder: "Yorum sayısı buraya gelecek",
+  ratingPlaceholder: "5,0",
+  countPlaceholder: "11 yorum",
   ctaLabel: "Google'da Tüm Yorumları Gör",
 };

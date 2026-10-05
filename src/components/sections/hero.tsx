@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import {
   ShieldCheck,
   MapPin,
@@ -8,9 +8,9 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/shared/container";
-import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
 import { Reveal } from "@/components/shared/reveal";
 import { AnimatedWash } from "@/components/shared/animated-wash";
+import { ImageLightbox } from "@/components/shared/image-lightbox";
 import { HeroGoogleRating } from "@/components/sections/hero-google-rating";
 
 const trustItems = [
@@ -18,19 +18,16 @@ const trustItems = [
     icon: Award,
     label: siteConfig.trust.experienceLabel,
     value: siteConfig.trust.experienceValue,
-    placeholder: true,
   },
   {
     icon: Briefcase,
     label: siteConfig.trust.completedJobsLabel,
     value: siteConfig.trust.completedJobsValue,
-    placeholder: true,
   },
   {
     icon: MapPinned,
     label: siteConfig.trust.serviceAreaLabel,
     value: siteConfig.trust.serviceAreaValue,
-    placeholder: false,
   },
 ];
 
@@ -47,13 +44,13 @@ export function HeroSection() {
             {siteConfig.location.city} • {siteConfig.company.ownerName}
           </p>
           <h1 className="text-[2rem] leading-tight text-balance sm:text-5xl lg:text-[3.5rem]">
-            Su ve Doğalgaz Tesisatında Profesyonel Çözümler
+            Tesisat, Tadilat ve Dekorasyonda Güvenilir Çözümler
           </h1>
           <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
             {siteConfig.company.name} olarak {siteConfig.company.ownerName} ile{" "}
             {siteConfig.location.city}
-            &apos;de su ve doğalgaz tesisatı hizmeti sunuyoruz. Hemen arayın veya
-            WhatsApp&apos;tan yazın.
+            &apos;de sıhhi tesisat, kalorifer, tadilat, duşakabin ve daha
+            fazlasını sunuyoruz. Hemen arayın veya WhatsApp&apos;tan yazın.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-2">
@@ -72,13 +69,14 @@ export function HeroSection() {
               aria-hidden
             />
             <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-              <Image
-                src="/images/hero.svg"
-                alt={`${siteConfig.company.name} proje ve teknisyen görsel alanı`}
+              <ImageLightbox
+                src="/images/hero.jpg"
+                alt={`${siteConfig.company.name} tamamlanmış banyo tadilatı`}
                 width={1200}
                 height={900}
                 priority
-                className="h-auto w-full object-cover"
+                className="aspect-[4/3]"
+                imageClassName="aspect-[4/3] h-auto w-full object-cover"
               />
             </div>
           </div>
@@ -97,9 +95,8 @@ export function HeroSection() {
               className="h-full"
             >
               <div className="flex h-full min-h-[9.5rem] flex-col rounded-2xl border border-border bg-white p-5 shadow-sm transition-transform hover:-translate-y-0.5">
-                <div className="mb-3 flex items-start justify-between gap-2">
+                <div className="mb-3">
                   <item.icon className="size-5 text-brand" aria-hidden />
-                  {item.placeholder ? <PlaceholderBadge /> : null}
                 </div>
                 <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
                   {item.label}

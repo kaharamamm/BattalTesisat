@@ -10,35 +10,35 @@ export const faqs: Faq[] = [
     id: "faq-1",
     question: "Hangi bölgelere hizmet veriyorsunuz?",
     answer:
-      "Hizmet bölgeleri henüz kesinleştirilmemiştir. Onaylanan ilçe ve mahalle listesi buraya eklenecektir.",
-    isPlaceholder: true,
+      "Eskişehir Tepebaşı ve çevresine hizmet veriyoruz. Talebinize göre yakın ilçelerde de destek sağlayabiliyoruz.",
+    isPlaceholder: false,
   },
   {
     id: "faq-2",
     question: "Hangi hizmetleri sunuyorsunuz?",
     answer:
-      "Başlangıç olarak su ve doğalgaz tesisatı odaklı yapılandırılmıştır. Nihai hizmet listesi müşteri onayı sonrası güncellenecektir.",
-    isPlaceholder: true,
+      "Sıhhi tesisat, kalorifer, tamir, tadilat, elektrik, boya & badana, dekorasyon, duşakabin ve gömme rezervuar (montaj, tamir, bakım) hizmetleri sunuyoruz.",
+    isPlaceholder: false,
   },
   {
     id: "faq-3",
     question: "Çalışma saatleriniz nedir?",
     answer:
-      "Çalışma saatleri müşteri tarafından onaylandığında burada yayınlanacaktır.",
-    isPlaceholder: true,
+      "Haftanın her günü 09:00 – 20:00 saatleri arasında hizmet veriyoruz.",
+    isPlaceholder: false,
   },
   {
     id: "faq-4",
     question: "Fiyatlandırma nasıl yapılıyor?",
     answer:
-      "Fiyatlandırma politikası henüz tanımlanmamıştır. Keşif ve teklif süreci onaylandıktan sonra burada açıklanacaktır.",
-    isPlaceholder: true,
+      "İşin kapsamına göre yerinde veya telefon/WhatsApp üzerinden keşif yapıp net teklif sunuyoruz. Ücret, malzeme ve işçilik ihtiyacına göre belirlenir.",
+    isPlaceholder: false,
   },
   {
     id: "faq-5",
     question: "Randevu nasıl oluşturabilirim?",
     answer:
-      "Şimdilik WhatsApp veya telefon üzerinden iletişim tercih edilmektedir. Randevu süreci detayları daha sonra netleştirilecektir.",
-    isPlaceholder: true,
+      "Telefon veya WhatsApp üzerinden bize yazmanız yeterli. Uygun gün ve saati birlikte planlarız.",
+    isPlaceholder: false,
   },
 ];

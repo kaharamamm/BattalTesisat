@@ -7,7 +7,7 @@ import { FinalCtaSection } from "@/components/sections/final-cta";
 
 export const metadata: Metadata = {
   title: "Projelerimiz",
-  description: `${siteConfig.company.name} tamamlanan iş örnekleri. Proje görselleri müşteri tarafından sağlandığında yayınlanacaktır.`,
+  description: `${siteConfig.company.name} tamamlanan iş örnekleri — banyo tadilatı, gömme rezervuar, sıhhi tesisat ve kalorifer uygulamaları.`,
   alternates: { canonical: "/projeler" },
 };
 
@@ -20,8 +20,8 @@ export default function ProjectsPage() {
             Yaptığımız İşlerden
           </h1>
           <p className="mt-4 max-w-3xl text-base text-muted-foreground sm:text-lg">
-            Proje görselleri ve açıklamaları müşteri tarafından sağlandığında
-            burada yayınlanacaktır.
+            Banyo tadilatı, gömme rezervuar, sıhhi tesisat ve kalorifer
+            uygulamalarından örnekler.
           </p>
           <ProjectsSection bare showHeader={false} />
         </Container>

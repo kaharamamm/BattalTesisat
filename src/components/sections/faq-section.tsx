@@ -54,7 +54,7 @@ export function FaqSection({
       title={showHeader ? "Sıkça Sorulan Sorular" : undefined}
       description={
         showHeader
-          ? "Yanıtlar müşteri politikaları onaylanana kadar yer tutucu niteliktedir."
+          ? "Hizmet bölgeleri, çalışma saatleri ve randevu hakkında merak edilenler."
           : undefined
       }
     >

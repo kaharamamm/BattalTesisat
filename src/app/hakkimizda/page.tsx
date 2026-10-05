@@ -9,7 +9,7 @@ import { FinalCtaSection } from "@/components/sections/final-cta";
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
-  description: `${siteConfig.company.name} — ${siteConfig.company.ownerName} ile Eskişehir'de su ve doğalgaz tesisatı.`,
+  description: `${siteConfig.company.name} — ${siteConfig.company.ownerName} ile Eskişehir'de tesisat, tadilat ve dekorasyon.`,
   alternates: { canonical: "/hakkimizda" },
 };
 
@@ -23,11 +23,11 @@ export default function AboutPage() {
           <div className="grid items-start gap-10 lg:grid-cols-2">
             <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
               <Image
-                src="/images/team.svg"
-                alt={`${siteConfig.company.name} firma görsel alanı`}
+                src="/images/about.jpg"
+                alt={`${siteConfig.company.name} ekip çalışması`}
                 width={1000}
                 height={750}
-                className="h-auto w-full object-cover"
+                className="aspect-[4/3] h-auto w-full object-cover"
               />
             </div>
             <div className="min-w-0 space-y-5">
@@ -46,9 +46,9 @@ export default function AboutPage() {
                 {siteConfig.company.description}
               </p>
               <p className="text-muted-foreground">
-                Su ve doğalgaz tesisatı işlerinizde {siteConfig.company.ownerName}{" "}
-                ile doğrudan iletişime geçebilirsiniz. Telefon ve WhatsApp:{" "}
-                {siteConfig.contact.phoneDisplay}.
+                10+ yıllık deneyim ve 1000+ tamamlanan işle{" "}
+                {siteConfig.company.ownerName} olarak Eskişehir&apos;de yanınızdayız.
+                Telefon ve WhatsApp: {siteConfig.contact.phoneDisplay}.
               </p>
               <ul className="space-y-3 rounded-2xl border border-border bg-white p-5 text-sm text-navy shadow-sm">
                 <li>• Çalışma bölgesi: {siteConfig.location.city}</li>

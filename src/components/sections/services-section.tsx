@@ -7,6 +7,10 @@ import {
   Wrench,
   Hammer,
   Settings,
+  Paintbrush,
+  Zap,
+  Bath,
+  Sparkles,
 } from "lucide-react";
 import {
   getPrimaryServices,
@@ -25,6 +29,10 @@ const iconMap = {
   wrench: Wrench,
   hammer: Hammer,
   settings: Settings,
+  paintbrush: Paintbrush,
+  zap: Zap,
+  bath: Bath,
+  sparkles: Sparkles,
 };
 
 /** Same scale and chrome as Projelerimiz cards. */
@@ -45,7 +53,7 @@ function FeaturedServiceCard({ service }: { service: Service }) {
       </div>
       <div className="p-5">
         <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand">
-          <span>Tesisat</span>
+          <span>Hizmet</span>
           <span className="text-border">•</span>
           <span className="text-muted-foreground">{siteConfig.location.city}</span>
         </div>
@@ -90,7 +98,7 @@ export function ServicesSection() {
     <Section
       id="hizmetler"
       title="Hizmetlerimiz"
-      description="Öncelikli hizmetlerimiz su ve doğalgaz tesisatıdır. Diğer başlıklar müşteri onayı sonrası netleştirilecektir."
+      description="Sıhhi tesisat, kalorifer, tadilat, duşakabin, gömme rezervuar ve daha fazlası — ihtiyacınıza göre yanınızdayız."
     >
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {primary.map((service, i) => (

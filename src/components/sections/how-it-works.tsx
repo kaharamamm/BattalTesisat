@@ -9,7 +9,7 @@ export function HowItWorksSection() {
   return (
     <Section
       title="Nasıl Çalışıyoruz?"
-      description="Süreç adımları genel bir çerçevedir; kesin iş akışı müşteri onayı sonrası netleştirilecektir."
+      description="Üç net adımda talebinizi alın, planlayın ve tamamlayın."
       headerAlign="center"
     >
       <div className="relative grid gap-6 md:grid-cols-3">

@@ -5,22 +5,20 @@ import { Star } from "lucide-react";
 import { reviewsSummary } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 import { Section } from "@/components/shared/section";
-import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
 import { Reveal } from "@/components/shared/reveal";
 import { ReviewsCarousel } from "@/components/sections/reviews-carousel";
 import { useGoogleReviews } from "@/hooks/use-google-reviews";
 import { trackEvent } from "@/lib/analytics";
 
 export function ReviewsSection() {
-  const { ratingValue, reviewCount, reviews, loading } = useGoogleReviews();
+  const { ratingValue, reviewCount, reviews } = useGoogleReviews();
   const googleUrl = siteConfig.social.googleBusiness;
   const hasGoogleUrl = Boolean(googleUrl);
-  const hasRating = Boolean(ratingValue);
 
   return (
     <Section
       title={reviewsSummary.heading}
-      description="Müşterilerimizin Google üzerinden bıraktığı en yüksek puanlı yorumlar. Ana sayfa her açılışta güncel puan ve yorumları yükler."
+      description="Müşterilerimizin deneyimleri."
     >
       <Reveal>
         <div className="mb-8 flex flex-col gap-4 rounded-2xl border border-border bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between md:p-6">
@@ -31,11 +29,6 @@ export function ReviewsSection() {
                 <p className="text-sm text-muted-foreground">Google puanı</p>
                 <p className="font-semibold text-navy">
                   {ratingValue ?? reviewsSummary.ratingPlaceholder}
-                  {loading ? (
-                    <span className="ml-2 text-xs font-normal text-muted-foreground">
-                      güncelleniyor…
-                    </span>
-                  ) : null}
                 </p>
               </div>
             </div>
@@ -48,7 +41,6 @@ export function ReviewsSection() {
                   : reviewsSummary.countPlaceholder}
               </p>
             </div>
-            {!hasRating ? <PlaceholderBadge /> : null}
           </div>
           {hasGoogleUrl ? (
             <Link

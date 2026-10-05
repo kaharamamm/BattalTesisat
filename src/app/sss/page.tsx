@@ -20,8 +20,8 @@ export default function FaqPage() {
             Sıkça Sorulan Sorular
           </h1>
           <p className="mt-4 max-w-3xl text-base text-muted-foreground sm:text-lg">
-            Yanıtlar müşteri politikaları onaylanana kadar yer tutucu
-            niteliktedir.
+            Hizmet bölgeleri, çalışma saatleri ve randevu hakkında merak
+            edilenler.
           </p>
           <FaqSection bare showHeader={false} />
         </Container>

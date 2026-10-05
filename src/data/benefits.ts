@@ -5,45 +5,48 @@ export type Benefit = {
   isPlaceholder: boolean;
 };
 
-/**
- * Neutral placeholder benefit labels — replace with confirmed selling points.
- */
 export const benefits: Benefit[] = [
   {
     id: "benefit-1",
-    title: "Uzmanlık Bilgisi",
-    description: "Uzmanlık ve deneyim açıklaması buraya gelecek.",
-    isPlaceholder: true,
+    title: "10+ Yıllık Deneyim",
+    description:
+      "İsmail Usta liderliğinde yılların birikimiyle tesisat, tadilat ve montaj işlerinde güvenilir çözümler sunuyoruz.",
+    isPlaceholder: false,
   },
   {
     id: "benefit-2",
-    title: "Hizmet Kapsamı",
-    description: "Sunulan hizmet kapsamı buraya gelecek.",
-    isPlaceholder: true,
+    title: "Geniş Hizmet Kapsamı",
+    description:
+      "Sıhhi tesisattan duşakabine, kaloriferden gömme rezervuara, tadilattan boya-badanaya kadar birçok işi tek ekipten yönetebilirsiniz.",
+    isPlaceholder: false,
   },
   {
     id: "benefit-3",
-    title: "Çalışma Prensibi",
-    description: "Çalışma prensibi ve süreç yaklaşımı buraya gelecek.",
-    isPlaceholder: true,
+    title: "Hızlı ve Net İletişim",
+    description:
+      "Telefon ve WhatsApp ile kolay ulaşım. Talebinizi dinleyip uygun planı birlikte çıkarıyoruz.",
+    isPlaceholder: false,
   },
   {
     id: "benefit-4",
-    title: "Garanti / Destek Bilgisi",
-    description: "Garanti ve destek koşulları buraya gelecek.",
-    isPlaceholder: true,
+    title: "1000+ Tamamlanan İş",
+    description:
+      "Konut ve işyeri projelerinde biriken tecrübe ile temiz işçilik ve sonucuna güvenebileceğiniz uygulama.",
+    isPlaceholder: false,
   },
   {
     id: "benefit-5",
-    title: "Hizmet Bölgesi",
-    description: "Hizmet verilen bölgeler buraya gelecek.",
-    isPlaceholder: true,
+    title: "Eskişehir Odaklı Hizmet",
+    description:
+      "Tepebaşı ve çevresinde hızlı ulaşım. Yerel ihtiyaçlara alışkın, sahaya yakın çalışma.",
+    isPlaceholder: false,
   },
   {
     id: "benefit-6",
-    title: "Yetki / Belge Bilgisi",
-    description: "Yetki ve belge bilgileri buraya gelecek.",
-    isPlaceholder: true,
+    title: "Her Gün 09:00 – 20:00",
+    description:
+      "Hafta içi ve hafta sonu aynı mesai düzeniyle ulaşılabilirlik. Acil ihtiyaçlarda da iletişime geçebilirsiniz.",
+    isPlaceholder: false,
   },
 ];
 
@@ -60,20 +63,20 @@ export const processSteps: ProcessStep[] = [
     step: "01",
     title: "Bize Ulaşın",
     description:
-      "WhatsApp veya telefon ile ihtiyacınızı iletin. İletişim kanalları her zaman açıktır.",
+      "WhatsApp veya telefon ile ihtiyacınızı iletin. Her gün 09:00 – 20:00 arası bize ulaşabilirsiniz.",
   },
   {
     id: "step-2",
     step: "02",
     title: "İhtiyacı Belirleyelim",
     description:
-      "Talebinizi birlikte netleştirelim. Detaylı keşif süreci müşteri onayı sonrası tanımlanacaktır.",
+      "Keşif veya görüşme ile işin kapsamını netleştirip size uygun çözümü anlatıyoruz.",
   },
   {
     id: "step-3",
     step: "03",
     title: "Hizmeti Planlayalım",
     description:
-      "Uygun bir çalışma planı oluşturalım. Planlama detayları onaylandıktan sonra güncellenecektir.",
+      "Uygun gün ve saat için randevu oluşturup işi planlı ve temiz şekilde tamamlıyoruz.",
   },
 ];

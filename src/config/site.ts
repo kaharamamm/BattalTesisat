@@ -93,7 +93,7 @@ export const siteConfig: SiteConfig = {
     shortName: "Ada Tesisat&Hırdavat",
     legalName: "Ada Tesisat&Hırdavat",
     description:
-      "Eskişehir Tepebaşı'nda su ve doğalgaz tesisatı ile hırdavat hizmetleri. İsmail Usta liderliğinde keşif, montaj ve onarım.",
+      "Eskişehir Tepebaşı'nda sıhhi tesisat, kalorifer, tadilat, duşakabin, gömme rezervuar ve daha fazlası. İsmail Usta liderliğinde keşif, montaj, tamir ve bakım.",
     ownerName: "İsmail Usta",
     ownerTitle: "Uzman Tesisatçı",
     initials: "AT",
@@ -105,8 +105,7 @@ export const siteConfig: SiteConfig = {
     whatsapp: "905520181897",
     whatsappDefaultMessage:
       "Merhaba İsmail Usta, Ada Tesisat&Hırdavat web siteniz üzerinden ulaşıyorum. Hizmetleriniz hakkında bilgi almak istiyorum.",
-    // TODO: Replace with the real business email when confirmed.
-    email: "info@example.com",
+    email: "ismailbattal260@gmail.com",
   },
 
   location: {
@@ -123,10 +122,10 @@ export const siteConfig: SiteConfig = {
   },
 
   workingHours: {
-    weekdays: "Çalışma saatleri buraya gelecek",
-    saturday: "Cumartesi saatleri buraya gelecek",
-    sunday: "Pazar saatleri buraya gelecek",
-    display: "Çalışma saatleri buraya gelecek",
+    weekdays: "09:00 – 20:00",
+    saturday: "09:00 – 20:00",
+    sunday: "09:00 – 20:00",
+    display: "Her gün 09:00 – 20:00",
   },
 
   social: {
@@ -142,10 +141,10 @@ export const siteConfig: SiteConfig = {
     // TODO: Replace https://example.com with the real domain before production.
     siteUrl: "https://example.com",
     defaultTitle:
-      "Ada Tesisat&Hırdavat | Eskişehir Su ve Doğalgaz Tesisatı — İsmail Usta",
+      "Ada Tesisat&Hırdavat | Eskişehir Tesisat, Tadilat ve Dekorasyon — İsmail Usta",
     defaultDescription:
-      "Ada Tesisat&Hırdavat — Eskişehir Tepebaşı'nda İsmail Usta ile su ve doğalgaz tesisatı. Telefon ve WhatsApp: 0 (552) 018 18 97.",
-    ogImage: "/images/og-default.svg",
+      "Ada Tesisat&Hırdavat — Eskişehir Tepebaşı'nda İsmail Usta ile sıhhi tesisat, kalorifer, tadilat, duşakabin ve gömme rezervuar. Telefon ve WhatsApp: 0 (552) 018 18 97.",
+    ogImage: "/images/og-default.jpg",
   },
 
   trust: {
@@ -153,9 +152,9 @@ export const siteConfig: SiteConfig = {
     googleRatingValue: "5,0",
     googleReviewCount: 11,
     experienceLabel: "Deneyim",
-    experienceValue: "Deneyim bilgisi buraya gelecek",
+    experienceValue: "10+ yıl",
     completedJobsLabel: "Tamamlanan İşler",
-    completedJobsValue: "İş sayısı buraya gelecek",
+    completedJobsValue: "1000+",
     serviceAreaLabel: "Hizmet Bölgesi",
     serviceAreaValue: "Eskişehir Tepebaşı ve çevresi",
   },

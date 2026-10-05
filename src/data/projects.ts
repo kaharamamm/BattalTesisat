@@ -9,69 +9,71 @@ export type Project = {
   isPlaceholder: boolean;
 };
 
-/**
- * Do not invent real completed projects.
- * Replace these with confirmed customer project photos and details.
- */
 export const projects: Project[] = [
   {
     id: "project-1",
-    title: "Proje Görseli",
-    serviceType: "Su Tesisatı",
+    title: "Modern Banyo Tadilatı",
+    serviceType: "Tadilat / Duşakabin",
     location: "Eskişehir",
-    description: "Proje bilgileri müşteri tarafından sağlanacaktır.",
-    image: "/images/project-1.svg",
-    imageAlt: "Tamamlanan su tesisatı projesi yer tutucu görseli",
-    isPlaceholder: true,
+    description:
+      "Duşakabin, gömme rezervuar ve dekoratif aydınlatmalı modern banyo uygulaması.",
+    image: "/images/project-1.jpg",
+    imageAlt: "Tamamlanmış modern banyo tadilatı",
+    isPlaceholder: false,
   },
   {
     id: "project-2",
-    title: "Proje Görseli",
-    serviceType: "Doğalgaz Tesisatı",
+    title: "Gömme Rezervuar Montajı",
+    serviceType: "Gömme Rezervuar",
     location: "Eskişehir",
-    description: "Proje bilgileri müşteri tarafından sağlanacaktır.",
-    image: "/images/project-2.svg",
-    imageAlt: "Tamamlanan doğalgaz tesisatı projesi yer tutucu görseli",
-    isPlaceholder: true,
+    description:
+      "Duvara gömme rezervuar çerçevesi ve bağlantı tesisatı kurulumu.",
+    image: "/images/project-2.jpg",
+    imageAlt: "Gömme rezervuar montaj çalışması",
+    isPlaceholder: false,
   },
   {
     id: "project-3",
-    title: "Proje Görseli",
-    serviceType: "Su Tesisatı",
+    title: "Gömme Batarya Tesisatı",
+    serviceType: "Sıhhi Tesisat",
     location: "Eskişehir",
-    description: "Proje bilgileri müşteri tarafından sağlanacaktır.",
-    image: "/images/project-3.svg",
-    imageAlt: "Tamamlanan tesisat projesi yer tutucu görseli",
-    isPlaceholder: true,
+    description:
+      "Banyo duvarında gömme batarya ve PPRC boru tesisatı uygulaması.",
+    image: "/images/project-3.jpg",
+    imageAlt: "Sıhhi tesisat gömme batarya montajı",
+    isPlaceholder: false,
   },
   {
     id: "project-4",
-    title: "Proje Görseli",
-    serviceType: "Doğalgaz Tesisatı",
+    title: "Duş Drenaj ve Tesisat",
+    serviceType: "Tadilat / Sıhhi Tesisat",
     location: "Eskişehir",
-    description: "Proje bilgileri müşteri tarafından sağlanacaktır.",
-    image: "/images/project-4.svg",
-    imageAlt: "Tamamlanan montaj projesi yer tutucu görseli",
-    isPlaceholder: true,
+    description:
+      "Yürüme duş alanında lineer drenaj ve su tesisatı yenilemesi.",
+    image: "/images/project-4.jpg",
+    imageAlt: "Duş drenaj ve tesisat tadilatı",
+    isPlaceholder: false,
   },
   {
     id: "project-5",
-    title: "Proje Görseli",
-    serviceType: "Su Tesisatı",
+    title: "Kalorifer Radyatör Uygulaması",
+    serviceType: "Kalorifer",
     location: "Eskişehir",
-    description: "Proje bilgileri müşteri tarafından sağlanacaktır.",
-    image: "/images/project-5.svg",
-    imageAlt: "Tamamlanan sıhhi tesisat projesi yer tutucu görseli",
-    isPlaceholder: true,
+    description:
+      "Koridor hattında kalorifer radyatör ve ısıtma tesisatı çalışması.",
+    image: "/images/project-5.jpg",
+    imageAlt: "Kalorifer radyatör tesisatı",
+    isPlaceholder: false,
   },
   {
     id: "project-6",
-    title: "Proje Görseli",
-    serviceType: "Doğalgaz Tesisatı",
+    title: "Hassas Montaj Çalışması",
+    serviceType: "Tadilat",
     location: "Eskişehir",
-    description: "Proje bilgileri müşteri tarafından sağlanacaktır.",
-    image: "/images/project-6.svg",
-    imageAlt: "Tamamlanan teknik tesisat projesi yer tutucu görseli",
-    isPlaceholder: true,
+    description:
+      "Lazer hizalama ile yüksek noktada hassas montaj ve tadilat uygulaması.",
+    image: "/images/project-6.jpg",
+    imageAlt: "Ekip ile tadilat ve montaj çalışması",
+    isPlaceholder: false,
   },
 ];

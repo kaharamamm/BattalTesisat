@@ -89,7 +89,7 @@ export function ProjectsSection({
       title={showHeader ? "Yaptığımız İşlerden" : undefined}
       description={
         showHeader
-          ? "Proje görselleri ve açıklamaları müşteri tarafından sağlandığında burada yayınlanacaktır."
+          ? "Banyo tadilatı, gömme rezervuar, sıhhi tesisat ve kalorifer uygulamalarından örnekler."
           : undefined
       }
     >
