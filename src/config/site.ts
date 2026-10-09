@@ -89,9 +89,9 @@ export function isPlaceholderText(value: string): boolean {
 
 export const siteConfig: SiteConfig = {
   company: {
-    name: "Ada Tesisat&Hırdavat",
-    shortName: "Ada Tesisat&Hırdavat",
-    legalName: "Ada Tesisat&Hırdavat",
+    name: "Ada Tesisat & Hırdavat",
+    shortName: "Ada Tesisat & Hırdavat",
+    legalName: "Ada Tesisat & Hırdavat",
     description:
       "Eskişehir Tepebaşı'nda sıhhi tesisat, kalorifer, tadilat, duşakabin, gömme rezervuar ve daha fazlası. İsmail Usta liderliğinde keşif, montaj, tamir ve bakım.",
     ownerName: "İsmail Usta",
@@ -104,7 +104,7 @@ export const siteConfig: SiteConfig = {
     phoneHref: "+905520181897",
     whatsapp: "905520181897",
     whatsappDefaultMessage:
-      "Merhaba İsmail Usta, Ada Tesisat&Hırdavat web siteniz üzerinden ulaşıyorum. Hizmetleriniz hakkında bilgi almak istiyorum.",
+      "Merhaba İsmail Usta, Ada Tesisat & Hırdavat web siteniz üzerinden ulaşıyorum. Hizmetleriniz hakkında bilgi almak istiyorum.",
     email: "ismailbattal260@gmail.com",
   },
 
@@ -140,10 +140,9 @@ export const siteConfig: SiteConfig = {
   seo: {
     // TODO: Replace https://example.com with the real domain before production.
     siteUrl: "https://example.com",
-    defaultTitle:
-      "Ada Tesisat&Hırdavat | Eskişehir Tesisat, Tadilat ve Dekorasyon — İsmail Usta",
+    defaultTitle: "Ada Tesisat & Hırdavat",
     defaultDescription:
-      "Ada Tesisat&Hırdavat — Eskişehir Tepebaşı'nda İsmail Usta ile sıhhi tesisat, kalorifer, tadilat, duşakabin ve gömme rezervuar. Telefon ve WhatsApp: 0 (552) 018 18 97.",
+      "Ada Tesisat & Hırdavat — Eskişehir Tepebaşı'nda İsmail Usta ile sıhhi tesisat, kalorifer, tadilat, duşakabin ve gömme rezervuar. Telefon ve WhatsApp: 0 (552) 018 18 97.",
     ogImage: "/images/og-default.jpg",
   },
 
