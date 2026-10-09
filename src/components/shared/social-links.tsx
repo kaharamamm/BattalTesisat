@@ -1,5 +1,4 @@
 import { siteConfig } from "@/config/site";
-import { PlaceholderBadge } from "@/components/shared/placeholder-badge";
 import { cn } from "@/lib/utils";
 
 type SocialLinksProps = {
@@ -104,11 +103,8 @@ export function SocialLinks({
 
   if (items.length === 0) return null;
 
-  const pending = showEmpty && !hasAnySocialLinks();
-
   return (
-    <div className={cn("space-y-3", className)}>
-      {pending ? <PlaceholderBadge label="Link bekleniyor" /> : null}
+    <div className={cn(className)}>
       <ul className="flex flex-wrap items-center gap-2">
         {items.map(({ key, label, href, Icon }) => {
           const itemClassName = cn(
